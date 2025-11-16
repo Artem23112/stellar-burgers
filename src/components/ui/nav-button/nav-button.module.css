@@ -1,0 +1,12 @@
+.link {
+  color: var(--primary-text-color);
+  transition: all 0.5s;
+  padding: 20px;
+  word-break: keep-all;
+  display: inline-flex;
+  column-gap: 8px;
+}
+
+.link:hover {
+  color: var(--secondary-text-color);
+}
