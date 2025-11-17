@@ -1,6 +1,7 @@
 import { BurgerConstructor } from "@/components/burger-constructor/burger-constructor";
 import { BurgerIngredients } from "@/components/burger-ingredients/burger-ingredients";
 import s from "./home-page.module.css";
+import { chosenIngredients } from "@/pages/home-page/chosen-ingredients";
 
 export const HomePage = () => {
   return (
@@ -9,7 +10,7 @@ export const HomePage = () => {
         <h2 className="text_type_main-large mb-5">Соберите бургер</h2>
         <section className={s.burgerAssembly}>
           <BurgerIngredients />
-          <BurgerConstructor />
+          <BurgerConstructor chosenIngredients={chosenIngredients} />
         </section>
       </div>
     </main>
