@@ -8,9 +8,13 @@ import {
 import clsx from "clsx";
 import s from "./header.module.css";
 
-export const Header = () => {
+type Props = {
+  className?: string;
+};
+
+export const Header: React.FC<Props> = ({ className = "" }) => {
   return (
-    <header className={s.header}>
+    <header className={clsx(s.header, className)}>
       <div className={clsx(s.wrapper, "container")}>
         <nav className={clsx(s.navigation, s.left)}>
           <NavButton icon={<BurgerIcon type="primary" />}>
