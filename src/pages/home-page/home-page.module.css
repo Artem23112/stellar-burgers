@@ -1,0 +1,5 @@
+.burgerAssembly {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
