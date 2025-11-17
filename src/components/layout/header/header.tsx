@@ -20,7 +20,9 @@ export const Header = () => {
             Лента заказов
           </NavButton>
         </nav>
-        <Logo className={clsx(s.center)} />
+        <a className={clsx(s.center)} href="/">
+          <Logo />
+        </a>
         <nav className={clsx(s.navigation, s.right)}>
           <NavButton icon={<ProfileIcon type="primary" />}>
             Личный кабинет

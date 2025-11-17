@@ -21,6 +21,7 @@
 }
 
 .center {
+  display: inline-flex;
   justify-self: center;
 }
 
