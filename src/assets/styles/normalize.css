@@ -355,3 +355,11 @@ template {
 [hidden] {
   display: none;
 }
+/* 
+* Delete list-style-type from ol and ul
+ */
+
+ol[class],
+ul[class] {
+  list-style-type: none;
+}
