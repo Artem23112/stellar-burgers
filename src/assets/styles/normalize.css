@@ -20,8 +20,13 @@ html {
  * Remove the margin in all browsers.
  */
 
-body {
+html,
+body,
+*,
+*::after,
+*::before {
   margin: 0;
+  padding: 0;
 }
 
 /**
