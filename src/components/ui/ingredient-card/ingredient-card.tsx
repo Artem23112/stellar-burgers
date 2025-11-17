@@ -1,8 +1,5 @@
 import type { IngredientInfo } from "@/assets/mock/ingredients";
-import {
-  Counter,
-  CurrencyIcon,
-} from "@ya.praktikum/react-developer-burger-ui-components";
+import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import clsx from "clsx";
 import s from "./ingredient-card.module.css";
 
