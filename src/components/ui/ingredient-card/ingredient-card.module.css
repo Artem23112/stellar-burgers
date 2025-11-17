@@ -6,6 +6,7 @@
   row-gap: 4px;
   background-color: var(----bg-color);
   color: var(--primary-text-color);
+  width: 272px;
 }
 
 .counter {
