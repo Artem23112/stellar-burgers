@@ -11,7 +11,7 @@ type Props = { ingredientInfo: IngredientInfo };
 export const IngredientCard: React.FC<Props> = ({ ingredientInfo }) => {
   return (
     <button className={s.card}>
-      <Counter count={ingredientInfo.__v} extraClass={s.counter} />
+      {/* <Counter count={ingredientInfo.__v} extraClass={s.counter} /> */}
       <img
         className={s.image}
         src={ingredientInfo.image}
