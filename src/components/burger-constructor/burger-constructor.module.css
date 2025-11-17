@@ -1,0 +1,24 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  height: fit-content;
+}
+
+.elementWrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.element {
+  background-color: var(--header-color);
+}
+
+.order {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-self: end;
+  justify-self: end;
+}
