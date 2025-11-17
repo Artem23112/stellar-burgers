@@ -1,4 +1,4 @@
 .ingredientsList {
   display: grid;
-  grid-template-columns: repeat(auto);
+  grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
 }
