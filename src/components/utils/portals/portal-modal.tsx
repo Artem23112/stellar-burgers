@@ -1,4 +1,4 @@
-import { Portal } from "@/components/utils/portal/portal";
+import { Portal } from "@/components/utils/portals/portal";
 import { useMemo, type FC } from "react";
 
 type PropsT = {
