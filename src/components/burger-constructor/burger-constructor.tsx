@@ -16,7 +16,7 @@ export const BurgerConstructor: React.FC<Props> = ({
   chosenIngredients: chosenIngredientsList,
 }) => {
   return (
-    <div>
+    <div className="pl-4 pr-4">
       <ul className={clsx(s.list, "mb-10")}>
         {chosenIngredientsList.map((ingredientInfo, ind) => {
           let type;
