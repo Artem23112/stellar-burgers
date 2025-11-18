@@ -1,0 +1,25 @@
+.content {
+  padding: 40px 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 640px;
+
+  @media (max-width: 720px) {
+    /* max-width: 640px; */
+    width: 100%;
+  }
+}
+
+.additionalInfo {
+  text-align: center;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
