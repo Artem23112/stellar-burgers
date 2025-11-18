@@ -12,6 +12,10 @@ body {
   font-weight: normal;
 }
 
+#modals {
+  position: relative;
+}
+
 .container {
   max-width: 1300px;
   padding-left: 10px;
