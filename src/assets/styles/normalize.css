@@ -208,6 +208,7 @@ button,
   -webkit-appearance: button;
   border-style: none;
   padding: 0;
+  cursor: pointer;
 }
 
 /**
