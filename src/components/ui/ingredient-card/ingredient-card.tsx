@@ -3,11 +3,14 @@ import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components
 import clsx from "clsx";
 import s from "./ingredient-card.module.css";
 
-type Props = { ingredientInfo: IngredientInfo };
+type Props = { ingredientInfo: IngredientInfo; onClick: () => void };
 
-export const IngredientCard: React.FC<Props> = ({ ingredientInfo }) => {
+export const IngredientCard: React.FC<Props> = ({
+  ingredientInfo,
+  onClick,
+}) => {
   return (
-    <button className={s.card}>
+    <button className={s.card} onClick={onClick}>
       {/* <Counter count={ingredientInfo.__v} extraClass={s.counter} /> */}
       <img
         className={s.image}
