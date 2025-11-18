@@ -11,7 +11,7 @@ export const BurgerIngredients: React.FC<Props> = ({ className }) => {
   const [currentTabId, setCurrentTabId] = useState(1);
 
   return (
-    <div className={className} style={{ maxWidth: "600px", width: "100%" }}>
+    <div className={className}>
       <Tabs
         className="mb-10"
         activeTabId={currentTabId}
