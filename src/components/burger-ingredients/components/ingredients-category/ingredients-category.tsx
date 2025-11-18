@@ -1,7 +1,7 @@
 import type { IngredientInfo } from "@/assets/mock/ingredients";
 import { IngredientCard } from "@/components/ui/ingredient-card/ingredient-card";
 import { IngredientDetailsModal } from "@/components/ui/modals/ingredient-details-modal/ingredient-details-modal";
-import { PortalModal } from "@/components/utils/portal/portal-modal";
+import { PortalModal } from "@/components/utils/portals/portal-modal";
 import { useState } from "react";
 import s from "./ingredients-category.module.css";
 
