@@ -38,6 +38,7 @@ export const IngredientsCategory: React.FC<Props> = ({
         <PortalModal>
           <IngredientDetailsModal
             ingredientInfo={modalState.ingredientInfo!}
+            isOpen={modalState.isOpen}
             onClick={toggleModal}
           />
         </PortalModal>
