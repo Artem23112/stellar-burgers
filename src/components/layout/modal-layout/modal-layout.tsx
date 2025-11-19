@@ -1,18 +1,22 @@
+import { useBodyScrollLock } from "@/hooks/useToggleBodyScroll";
 import clsx from "clsx";
 import { useEffect, type FC } from "react";
 import s from "./modal-layout.module.css";
 
-type PropsT = {
+type Props = {
   className?: string;
-  children: React.ReactNode;
+  isOpen: boolean;
   onClose?: () => void;
+  children: React.ReactNode;
 };
 
-export const ModalLayout: FC<PropsT> = ({
+export const ModalLayout: FC<Props> = ({
   className = "",
-  children,
+  isOpen,
   onClose,
+  children,
 }) => {
+  useBodyScrollLock(isOpen);
   useEffect(() => {
     const handleKeydownEvent = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
