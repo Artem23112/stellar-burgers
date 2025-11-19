@@ -4,7 +4,7 @@ import s from "./modal-layout.module.css";
 
 type PropsT = {
   className?: string;
-  children: React.ReactElement;
+  children: React.ReactNode;
   onClose?: () => void;
 };
 
