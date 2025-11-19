@@ -7,18 +7,20 @@ import s from "./ingredient-details-modal.module.css";
 
 type PropsT = {
   ingredientInfo: IngredientInfo;
+  isOpen: boolean;
   onClick: () => void;
 };
 
 export const IngredientDetailsModal: FC<PropsT> = ({
   ingredientInfo,
+  isOpen,
   onClick,
 }) => {
   const { image_large, name, calories, proteins, fat, carbohydrates } =
     ingredientInfo;
 
   return (
-    <ModalLayout className={clsx(s.content)} onClose={onClick}>
+    <ModalLayout className={clsx(s.content)} isOpen={isOpen} onClose={onClick}>
       <div className={s.header}>
         <h2 className={"text_type_main-large"}>Детали ингредиента</h2>
         <button type="button" onClick={onClick}>
