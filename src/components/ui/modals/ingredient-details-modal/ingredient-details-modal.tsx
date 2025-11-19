@@ -18,7 +18,7 @@ export const IngredientDetailsModal: FC<PropsT> = ({
     ingredientInfo;
 
   return (
-    <ModalLayout className={clsx(s.content)}>
+    <ModalLayout className={clsx(s.content)} onClose={onClick}>
       <>
         <div className={s.header}>
           <h2 className={"text_type_main-large"}>Детали ингредиента</h2>
