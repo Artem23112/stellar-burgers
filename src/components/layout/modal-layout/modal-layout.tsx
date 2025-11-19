@@ -14,21 +14,17 @@ export const ModalLayout: FC<PropsT> = ({
   onClose,
 }) => {
   useEffect(() => {
-    function handleKeydownEvent(e: KeyboardEvent) {
+    const handleKeydownEvent = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
       onClose?.();
-    }
-
+    };
     document.addEventListener("keydown", handleKeydownEvent);
 
-    return () => {
-      document.removeEventListener("keydown", handleKeydownEvent);
-    };
+    return () => document.removeEventListener("keydown", handleKeydownEvent);
   }, [onClose]);
 
   function safeClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    if (e.target !== e.currentTarget) return;
-    onClose?.();
+    if (e.target === e.currentTarget) onClose?.();
   }
 
   return (
