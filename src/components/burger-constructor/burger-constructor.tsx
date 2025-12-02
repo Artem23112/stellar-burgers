@@ -1,3 +1,4 @@
+import { CustomScroll } from "@/components/ui/custom-scroll/custom-scroll";
 import { OrderModal } from "@/components/ui/modals/order-modal/order-modal";
 import type { BurgerConfig } from "@/pages/home-page/chosen-ingredients";
 import {
@@ -37,19 +38,21 @@ export const BurgerConstructor: React.FC<Props> = ({ burgerConfiguration }) => {
             isLocked={true}
           />
         </li>
-        {filling.map((ingredientInfo) => (
-          <li className={s.elementWrapper} key={ingredientInfo._id}>
-            <DragIcon type="primary" />
-            <ConstructorElement
-              extraClass={s.element}
-              handleClose={() => {}}
-              text={ingredientInfo.name}
-              price={ingredientInfo.price}
-              thumbnail={ingredientInfo.image_mobile}
-              isLocked={false}
-            />
-          </li>
-        ))}
+        <CustomScroll>
+          {filling.map((ingredientInfo) => (
+            <li className={s.elementWrapper} key={ingredientInfo._id}>
+              <DragIcon type="primary" />
+              <ConstructorElement
+                extraClass={s.element}
+                handleClose={() => {}}
+                text={ingredientInfo.name}
+                price={ingredientInfo.price}
+                thumbnail={ingredientInfo.image_mobile}
+                isLocked={false}
+              />
+            </li>
+          ))}
+        </CustomScroll>
         <li className={s.elementWrapper} key={bun._id + "bottom"}>
           <DragIcon type="primary" />
           <ConstructorElement
