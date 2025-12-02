@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+}
+
+.scrollWrapper {
+  height: 100%;
+  background-color: #fff;
+  width: 25px;
+}
+
+.scrollInner {
+  width: 25px;
+  background-color: red;
+}
