@@ -1,5 +1,5 @@
-import { type IngredientInfo } from "@/assets/mock/ingredients";
 import { OrderModal } from "@/components/ui/modals/order-modal/order-modal";
+import type { BurgerConfig } from "@/pages/home-page/chosen-ingredients";
 import {
   Button,
   ConstructorElement,
@@ -11,12 +11,11 @@ import { useState } from "react";
 import s from "./burger-constructor.module.css";
 
 type Props = {
-  chosenIngredients: IngredientInfo[];
+  burgerConfiguration: BurgerConfig;
 };
 
-export const BurgerConstructor: React.FC<Props> = ({
-  chosenIngredients: chosenIngredientsList,
-}) => {
+export const BurgerConstructor: React.FC<Props> = ({ burgerConfiguration }) => {
+  const { bun, filling } = burgerConfiguration;
   const [isModalOpened, setIsModalOpened] = useState(false);
 
   function toggleModal() {
@@ -27,26 +26,41 @@ export const BurgerConstructor: React.FC<Props> = ({
     <div className="pl-4 pr-4">
       <OrderModal isOpen={isModalOpened} handleClick={toggleModal} />
       <ul className={clsx(s.list, "mb-10")}>
-        {chosenIngredientsList.map((ingredientInfo, ind) => {
-          let type;
-          if (ind === 0) type = "top";
-          if (ind === chosenIngredientsList.length - 1) type = "bottom";
-
-          return (
-            <li className={s.elementWrapper} key={ingredientInfo._id + type}>
-              <DragIcon type="primary" />
-              <ConstructorElement
-                extraClass={s.element}
-                handleClose={() => {}}
-                type={type}
-                isLocked={ind === 0 || ind === chosenIngredientsList.length - 1}
-                text={ingredientInfo.name}
-                price={ingredientInfo.price}
-                thumbnail={ingredientInfo.image_mobile}
-              />
-            </li>
-          );
-        })}
+        <li className={s.elementWrapper} key={bun._id + "top"}>
+          <DragIcon type="primary" />
+          <ConstructorElement
+            extraClass={s.element}
+            handleClose={() => {}}
+            text={bun.name}
+            price={bun.price}
+            thumbnail={bun.image_mobile}
+            isLocked={true}
+          />
+        </li>
+        {filling.map((ingredientInfo) => (
+          <li className={s.elementWrapper} key={ingredientInfo._id}>
+            <DragIcon type="primary" />
+            <ConstructorElement
+              extraClass={s.element}
+              handleClose={() => {}}
+              text={ingredientInfo.name}
+              price={ingredientInfo.price}
+              thumbnail={ingredientInfo.image_mobile}
+              isLocked={false}
+            />
+          </li>
+        ))}
+        <li className={s.elementWrapper} key={bun._id + "bottom"}>
+          <DragIcon type="primary" />
+          <ConstructorElement
+            extraClass={s.element}
+            handleClose={() => {}}
+            text={bun.name}
+            price={bun.price}
+            thumbnail={bun.image_mobile}
+            isLocked={true}
+          />
+        </li>
       </ul>
       <div className={s.order}>
         <p className={"text_type_digits-medium"}>
